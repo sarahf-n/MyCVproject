@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sarah Alharbi - CV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <div>
+        <h1>Sarah Alharbi</h1>
+        <p class="job-title">IT Student – Qassim University</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="fade-in">
+      <h2>About Me</h2>
+      <p>I am passionate about technology and always eager to learn. I enjoy working in teams, solving problems, and constantly improving myself.</p>
+    </section>
+
+    <section class="info-grid fade-in">
+      <div>
+        <h2>Personal Information</h2>
+        <ul>
+          <li><strong>Phone:</strong> +966 544 677 666</li>
+          <li><strong>Email:</strong> sf.alharbi546@gmail.com</li>
+          <li><strong>Nationality:</strong> Saudi</li>
+          <li><strong>Date of Birth:</strong> 29/12/2002</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Education</h2>
+        <p>Qassim University – IT Department<br>2021 – Now<br>GPA: 4.4 / 5</p>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Experience</h2>
+      <ul>
+        <li>Website for airline (SKE) – Team Project</li>
+        <li>Assignments in Python & C++</li>
+      </ul>
+    </section>
+
+    <section class="skills-columns fade-in">
+      <div>
+        <h2>Technical Skills</h2>
+        <ul>
+          <li>Java, Python, C, C++</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Microsoft Office Tools</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Soft Skills</h2>
+        <ul>
+          <li>Teamwork & Collaboration</li>
+          <li>Time Management</li>
+          <li>Fast Learner</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Languages</h2>
+      <p>Arabic, English</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sarah Alharbi</p>
+  </footer>
+ <script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -20px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+
+</body>
+</html>
